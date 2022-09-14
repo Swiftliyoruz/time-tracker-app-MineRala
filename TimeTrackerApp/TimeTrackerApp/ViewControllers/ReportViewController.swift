@@ -1,20 +1,19 @@
 //
-//  ViewController.swift
+//  ReportViewController.swift
 //  TimeTrackerApp
 //
-//  Created by Mine Rala on 11.09.2022.
+//  Created by Mine Rala on 12.09.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ReportViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
-    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.view.backgroundColor = Color.viewControllerBackgroundColor 
+        self.view.backgroundColor = Color.viewControllerBackgroundColor
     }
 }
-

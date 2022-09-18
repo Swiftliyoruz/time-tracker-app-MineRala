@@ -82,18 +82,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-N8-CTU">
                                 <rect key="frame" x="24" y="226" width="366" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-G7-zos">
-                                        <rect key="frame" x="0.0" y="0.0" width="316" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-G7-zos">
+                                        <rect key="frame" x="0.0" y="0.0" width="292" height="32"/>
                                         <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guN-yz-Tu2">
-                                        <rect key="frame" x="316" y="0.0" width="50" height="32"/>
-                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-wD-FqK">
+                                        <rect key="frame" x="292" y="0.0" width="74" height="32"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="See All">
+                                            <fontDescription key="titleFontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -103,6 +105,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-m5-Afj">
                                 <rect key="frame" x="16" y="274" width="382" height="555"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mxP-52-Pv4" id="4oW-gM-oJu"/>
+                                    <outlet property="delegate" destination="mxP-52-Pv4" id="R2I-BZ-2SW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cch-76-poQ"/>
@@ -128,9 +134,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="rightArrowButton" destination="gOv-qA-De3" id="m3l-lJ-vwY"/>
+                        <outlet property="seeAllButton" destination="BrB-wD-FqK" id="vQ0-XC-ZYf"/>
+                        <outlet property="taskTableView" destination="Gtu-m5-Afj" id="cJ7-gZ-876"/>
                         <outlet property="taskView" destination="QTD-zw-CxH" id="0Tx-Z8-1Jy"/>
                         <outlet property="timeLabel" destination="IFJ-kB-tho" id="bsF-db-Pcj"/>
                         <outlet property="titleLabel" destination="P8r-44-yO7" id="UZu-xn-UFX"/>
+                        <outlet property="todayLabel" destination="KaK-G7-zos" id="GkB-eN-eDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMc-Dg-Zlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

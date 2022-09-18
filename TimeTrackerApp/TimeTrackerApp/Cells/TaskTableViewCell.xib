@@ -17,30 +17,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0no-Ym-gfo">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJP-gj-wdU">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkx-vo-jF7">
-                                <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                    </stackView>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="0no-Ym-gfo" secondAttribute="bottom" id="7ho-5n-IGe"/>
-                    <constraint firstAttribute="trailing" secondItem="0no-Ym-gfo" secondAttribute="trailing" id="SGX-AM-bd7"/>
-                    <constraint firstItem="0no-Ym-gfo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XHn-jj-jjL"/>
-                    <constraint firstItem="0no-Ym-gfo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wbH-cr-7B1"/>
+                    <constraint firstAttribute="bottom" secondItem="AJP-gj-wdU" secondAttribute="bottom" id="EtL-aM-AeQ"/>
+                    <constraint firstItem="AJP-gj-wdU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NTR-7d-BXE"/>
+                    <constraint firstAttribute="trailing" secondItem="AJP-gj-wdU" secondAttribute="trailing" id="o6y-uP-fP7"/>
+                    <constraint firstItem="AJP-gj-wdU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pgb-Ck-4x8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cardView" destination="AJP-gj-wdU" id="Ccx-ZT-ILd"/>
+            </connections>
             <point key="canvasLocation" x="147.10144927536234" y="93.080357142857139"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

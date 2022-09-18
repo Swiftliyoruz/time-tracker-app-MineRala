@@ -8,7 +8,7 @@
 import UIKit
 
 enum Constant {
-    static let tableViewItem = 10
+    static let tableViewItem = 20
     static let cellSpacingHeight: CGFloat = 16.0
     static let cellNibName = "TaskTableViewCell"
     static let cellReusIdentifier = "TaskTableViewCell"
@@ -29,11 +29,12 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         taskView.layer.cornerRadius = 8
-        title = "Task"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+//        title = "Task"
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
+//        navigationController?.navigationBar.titleTextAttributes = textAttributes
         taskTableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.cellReusIdentifier)
+        taskTableView.separatorStyle = .none
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -53,6 +54,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.cellReusIdentifier, for: indexPath) as! TaskTableViewCell
+        
         return cell
     }
     

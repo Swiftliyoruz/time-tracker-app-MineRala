@@ -102,8 +102,8 @@
                                     <constraint firstAttribute="height" constant="32" id="NyD-LL-0Fy"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-m5-Afj">
-                                <rect key="frame" x="16" y="274" width="382" height="555"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-m5-Afj">
+                                <rect key="frame" x="16" y="274" width="382" height="539"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mxP-52-Pv4" id="4oW-gM-oJu"/>
@@ -119,11 +119,11 @@
                             <constraint firstItem="QTD-zw-CxH" firstAttribute="top" secondItem="cch-76-poQ" secondAttribute="top" id="IHL-3v-srK"/>
                             <constraint firstItem="Gtu-m5-Afj" firstAttribute="leading" secondItem="cch-76-poQ" secondAttribute="leading" constant="16" id="Ips-oU-VME"/>
                             <constraint firstItem="Gtu-m5-Afj" firstAttribute="top" secondItem="CJd-N8-CTU" secondAttribute="bottom" constant="16" id="Lv9-QL-EwI"/>
-                            <constraint firstItem="cch-76-poQ" firstAttribute="bottom" secondItem="Gtu-m5-Afj" secondAttribute="bottom" constant="-16" id="NKW-D9-a8f"/>
                             <constraint firstItem="CJd-N8-CTU" firstAttribute="leading" secondItem="cch-76-poQ" secondAttribute="leading" constant="24" id="OHi-rH-m4f"/>
                             <constraint firstItem="QTD-zw-CxH" firstAttribute="leading" secondItem="cch-76-poQ" secondAttribute="leading" constant="20" id="dLA-Ew-35j"/>
                             <constraint firstItem="cch-76-poQ" firstAttribute="trailing" secondItem="QTD-zw-CxH" secondAttribute="trailing" constant="20" id="dxe-NY-VxV"/>
                             <constraint firstItem="cch-76-poQ" firstAttribute="trailing" secondItem="Gtu-m5-Afj" secondAttribute="trailing" constant="16" id="fHv-SX-wPV"/>
+                            <constraint firstItem="Gtu-m5-Afj" firstAttribute="bottom" secondItem="cch-76-poQ" secondAttribute="bottom" id="fKL-ud-gZN"/>
                             <constraint firstItem="cch-76-poQ" firstAttribute="trailing" secondItem="CJd-N8-CTU" secondAttribute="trailing" constant="24" id="gu2-mE-lhD"/>
                         </constraints>
                     </view>
@@ -182,7 +182,7 @@
         <scene sceneID="edr-ys-vs9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fph-DP-dwk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="time-outline" id="7Cs-Gw-YBq">
+                    <tabBarItem key="tabBarItem" title="" image="time-outline" id="7Cs-Gw-YBq">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>

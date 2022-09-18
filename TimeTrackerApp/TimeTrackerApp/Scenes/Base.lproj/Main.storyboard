@@ -149,7 +149,7 @@
         <image name="add" width="32" height="32"/>
         <image name="more" width="24" height="24"/>
         <image name="pie-chart" width="24" height="24"/>
-        <image name="time-outline" width="28" height="28"/>
+        <image name="time-outline" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "arrow backDark.png",
+      "filename" : "arrow backDark.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "arrow backDark2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "arrow backDark3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

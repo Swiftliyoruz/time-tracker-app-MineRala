@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="j31-K2-Aah">
@@ -15,14 +23,115 @@
                     <view key="view" contentMode="scaleToFill" id="wi4-nS-nBJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTD-zw-CxH">
+                                <rect key="frame" x="20" y="88" width="374" height="114"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:32:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFJ-kB-tho">
+                                        <rect key="frame" x="16" y="16" width="135" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="HHP-3E-V2W"/>
+                                            <constraint firstAttribute="width" constant="135" id="QMV-cY-Rhm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOv-qA-De3">
+                                        <rect key="frame" x="326" y="24" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Cvi-Fh-HAV"/>
+                                            <constraint firstAttribute="width" constant="24" id="R4z-PP-lIS"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="right arrow"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44g-ny-P9N">
+                                        <rect key="frame" x="16" y="70" width="12" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="Ydd-KL-ol3"/>
+                                            <constraint firstAttribute="width" constant="12" id="x9f-Km-noi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Ellipse"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rasion Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8r-44-yO7">
+                                        <rect key="frame" x="40" y="66" width="108" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="108" id="BOg-hu-jGv"/>
+                                            <constraint firstAttribute="height" constant="20" id="DTs-gf-wuA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="44g-ny-P9N" firstAttribute="leading" secondItem="QTD-zw-CxH" secondAttribute="leading" constant="16" id="Cp6-zy-MNu"/>
+                                    <constraint firstItem="IFJ-kB-tho" firstAttribute="top" secondItem="QTD-zw-CxH" secondAttribute="top" constant="16" id="E5K-0Q-zuL"/>
+                                    <constraint firstItem="gOv-qA-De3" firstAttribute="top" secondItem="QTD-zw-CxH" secondAttribute="top" constant="24" id="Gjf-ni-Blu"/>
+                                    <constraint firstItem="IFJ-kB-tho" firstAttribute="leading" secondItem="QTD-zw-CxH" secondAttribute="leading" constant="16" id="IKK-VW-Qhc"/>
+                                    <constraint firstItem="P8r-44-yO7" firstAttribute="leading" secondItem="44g-ny-P9N" secondAttribute="trailing" constant="12" id="S19-5q-IId"/>
+                                    <constraint firstAttribute="trailing" secondItem="gOv-qA-De3" secondAttribute="trailing" constant="24" id="azx-zH-n7w"/>
+                                    <constraint firstItem="44g-ny-P9N" firstAttribute="top" secondItem="IFJ-kB-tho" secondAttribute="bottom" constant="16" id="d6w-0u-pL8"/>
+                                    <constraint firstAttribute="height" constant="114" id="grW-5C-FEh"/>
+                                    <constraint firstItem="P8r-44-yO7" firstAttribute="top" secondItem="IFJ-kB-tho" secondAttribute="bottom" constant="12" id="x9X-za-71e"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-N8-CTU">
+                                <rect key="frame" x="24" y="226" width="366" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-G7-zos">
+                                        <rect key="frame" x="0.0" y="0.0" width="316" height="32"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guN-yz-Tu2">
+                                        <rect key="frame" x="316" y="0.0" width="50" height="32"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="NyD-LL-0Fy"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-m5-Afj">
+                                <rect key="frame" x="16" y="274" width="382" height="555"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cch-76-poQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QTD-zw-CxH" firstAttribute="centerX" secondItem="wi4-nS-nBJ" secondAttribute="centerX" id="0KY-xo-wWB"/>
+                            <constraint firstItem="CJd-N8-CTU" firstAttribute="top" secondItem="QTD-zw-CxH" secondAttribute="bottom" constant="24" id="AIJ-uL-2XB"/>
+                            <constraint firstItem="QTD-zw-CxH" firstAttribute="top" secondItem="cch-76-poQ" secondAttribute="top" id="IHL-3v-srK"/>
+                            <constraint firstItem="Gtu-m5-Afj" firstAttribute="leading" secondItem="cch-76-poQ" secondAttribute="leading" constant="16" id="Ips-oU-VME"/>
+                            <constraint firstItem="Gtu-m5-Afj" firstAttribute="top" secondItem="CJd-N8-CTU" secondAttribute="bottom" constant="16" id="Lv9-QL-EwI"/>
+                            <constraint firstItem="cch-76-poQ" firstAttribute="bottom" secondItem="Gtu-m5-Afj" secondAttribute="bottom" constant="-16" id="NKW-D9-a8f"/>
+                            <constraint firstItem="CJd-N8-CTU" firstAttribute="leading" secondItem="cch-76-poQ" secondAttribute="leading" constant="24" id="OHi-rH-m4f"/>
+                            <constraint firstItem="QTD-zw-CxH" firstAttribute="leading" secondItem="cch-76-poQ" secondAttribute="leading" constant="20" id="dLA-Ew-35j"/>
+                            <constraint firstItem="cch-76-poQ" firstAttribute="trailing" secondItem="QTD-zw-CxH" secondAttribute="trailing" constant="20" id="dxe-NY-VxV"/>
+                            <constraint firstItem="cch-76-poQ" firstAttribute="trailing" secondItem="Gtu-m5-Afj" secondAttribute="trailing" constant="16" id="fHv-SX-wPV"/>
+                            <constraint firstItem="cch-76-poQ" firstAttribute="trailing" secondItem="CJd-N8-CTU" secondAttribute="trailing" constant="24" id="gu2-mE-lhD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vfe-H5-Od1">
                         <barButtonItem key="rightBarButtonItem" image="more" id="ffj-Cw-m3E">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="rightArrowButton" destination="gOv-qA-De3" id="m3l-lJ-vwY"/>
+                        <outlet property="taskView" destination="QTD-zw-CxH" id="0Tx-Z8-1Jy"/>
+                        <outlet property="timeLabel" destination="IFJ-kB-tho" id="bsF-db-Pcj"/>
+                        <outlet property="titleLabel" destination="P8r-44-yO7" id="UZu-xn-UFX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMc-Dg-Zlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,9 +255,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ellipse" width="12" height="12"/>
         <image name="add" width="32" height="32"/>
         <image name="more" width="24" height="24"/>
         <image name="pie-chart" width="24" height="24"/>
+        <image name="right arrow" width="24" height="24"/>
         <image name="time-outline" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

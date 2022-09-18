@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E85BA88128CF565B00ED5E1E /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85BA88028CF565B00ED5E1E /* TimerViewController.swift */; };
 		E85BA88328CF566B00ED5E1E /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85BA88228CF566B00ED5E1E /* ReportViewController.swift */; };
+		E8B53E8928D74D6F00C207B9 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B53E8828D74D6F00C207B9 /* Icon.swift */; };
 		E8BC99B128CE4875007C4416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BC99B028CE4875007C4416 /* AppDelegate.swift */; };
 		E8BC99B328CE4875007C4416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BC99B228CE4875007C4416 /* SceneDelegate.swift */; };
 		E8BC99B528CE4875007C4416 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BC99B428CE4875007C4416 /* HomeViewController.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		E85BA88028CF565B00ED5E1E /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		E85BA88228CF566B00ED5E1E /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		E8B53E8828D74D6F00C207B9 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		E8BC99AD28CE4875007C4416 /* TimeTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BC99B028CE4875007C4416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BC99B228CE4875007C4416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				E8BC99E128CE82F6007C4416 /* Color.swift */,
 				E8BC99E428CE87C3007C4416 /* Font.swift */,
+				E8B53E8828D74D6F00C207B9 /* Icon.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				E8BC99E528CE87C3007C4416 /* Font.swift in Sources */,
 				E85BA88128CF565B00ED5E1E /* TimerViewController.swift in Sources */,
 				E8BC99B328CE4875007C4416 /* SceneDelegate.swift in Sources */,
+				E8B53E8928D74D6F00C207B9 /* Icon.swift in Sources */,
 				E85BA88328CF566B00ED5E1E /* ReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

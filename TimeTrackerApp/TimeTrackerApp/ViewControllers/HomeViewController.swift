@@ -14,27 +14,21 @@ enum Constant {
     static let cellReusIdentifier = "TaskTableViewCell"
 }
 
-final class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+final class HomeViewController: UIViewController {
     @IBOutlet private weak var taskView: UIView!
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var rightArrowButton: UIButton!
- 
     @IBOutlet weak var seeAllButton: UIButton!
     @IBOutlet private weak var todayLabel: UILabel!
     @IBOutlet private weak var taskTableView: UITableView!
+    
     var textAttributesColor = DefaultColor.black
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        taskView.layer.cornerRadius = 8
-        title = "Task"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        taskTableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.cellReusIdentifier)
-        taskTableView.separatorStyle = .none
+        setUpNavigationController()
+        setUpUI()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -48,6 +42,23 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         self.seeAllButton.titleLabel?.textColor = Color.cellTitleTextColor
     }
     
+    private func setUpNavigationController() {
+        title = "Task"
+        tabBarController?.tabBar.items?.first?.title = ""
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    
+    private func setUpUI() {
+        taskView.layer.cornerRadius = 8
+        taskTableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.cellReusIdentifier)
+        taskTableView.separatorStyle = .none
+    }
+}
+
+//MARK: - TableView Delegate && DataSource
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Constant.tableViewItem
     }
@@ -61,6 +72,4 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         Constant.cellHeight
     }
- 
 }
-

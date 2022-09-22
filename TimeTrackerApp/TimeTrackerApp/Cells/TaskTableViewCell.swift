@@ -17,6 +17,7 @@ final class TaskTableViewCell: UITableViewCell {
     @IBOutlet private weak var tagLabel: UILabel!
     @IBOutlet private weak var tagTwoLabel: UILabel!
     @IBOutlet private weak var playButtton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpUI()
@@ -37,8 +38,6 @@ final class TaskTableViewCell: UITableViewCell {
         self.tagLabel.textColor = Color.cellTagViewLabelTextColor
         self.tagTwoLabel.textColor = Color.cellTagViewTwoLabelTextColor
     }
-    
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()

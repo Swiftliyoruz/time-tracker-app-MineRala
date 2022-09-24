@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum Constant {
+enum HomeViewConstant {
     static let tableViewItem = 20
     static let cellHeight: CGFloat = 100.0
     static let cellNibName = "TaskTableViewCell"
-    static let cellReusIdentifier = "TaskTableViewCell"
+    static let cellReuseIdentifier = "TaskTableViewCell"
     static let navigationBarTitle = "Task"
     static let tabBarTitle = ""
 }
@@ -48,8 +48,8 @@ final class HomeViewController: UIViewController {
     }
     
     private func setUpNavigationController() {
-        title = Constant.navigationBarTitle
-        tabBarController?.tabBar.items?.first?.title = Constant.tabBarTitle
+        title = HomeViewConstant.navigationBarTitle
+        tabBarController?.tabBar.items?.first?.title = HomeViewConstant.tabBarTitle
         navigationController?.navigationBar.prefersLargeTitles = true
         let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -57,7 +57,7 @@ final class HomeViewController: UIViewController {
     
     private func setUpUI() {
         taskView.layer.cornerRadius = CornerRadius.medium.rawValue
-        taskTableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.cellReusIdentifier)
+        taskTableView.register(UINib(nibName: HomeViewConstant.cellNibName, bundle: nil), forCellReuseIdentifier: HomeViewConstant.cellReuseIdentifier)
         taskTableView.separatorStyle = .none
     }
 }
@@ -65,16 +65,16 @@ final class HomeViewController: UIViewController {
 //MARK: - TableView Delegate && DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Constant.tableViewItem
+        HomeViewConstant.tableViewItem
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.cellReusIdentifier, for: indexPath) as! TaskTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewConstant.cellReuseIdentifier, for: indexPath) as! TaskTableViewCell
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        Constant.cellHeight
+        HomeViewConstant.cellHeight
     }
 }

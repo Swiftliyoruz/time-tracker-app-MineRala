@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="shY-7u-R8H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="shY-7u-R8H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTD-zw-CxH">
-                                <rect key="frame" x="16" y="88" width="382" height="114"/>
+                                <rect key="frame" x="16" y="92" width="382" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:32:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFJ-kB-tho">
                                         <rect key="frame" x="16" y="16" width="135" height="38"/>
@@ -80,7 +81,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-N8-CTU">
-                                <rect key="frame" x="24" y="226" width="366" height="32"/>
+                                <rect key="frame" x="24" y="230" width="366" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-G7-zos">
                                         <rect key="frame" x="0.0" y="0.0" width="292" height="32"/>
@@ -103,7 +104,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gtu-m5-Afj">
-                                <rect key="frame" x="16" y="274" width="382" height="539"/>
+                                <rect key="frame" x="16" y="278" width="382" height="535"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mxP-52-Pv4" id="4oW-gM-oJu"/>
@@ -160,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AsT-8y-SHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="1"/>
+            <point key="canvasLocation" x="1795.6521739130437" y="0.6696428571428571"/>
         </scene>
         <!--Report View Controller-->
         <scene sceneID="h3p-Bq-LXv">
@@ -182,12 +183,12 @@
         <scene sceneID="edr-ys-vs9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fph-DP-dwk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="time-outline" id="7Cs-Gw-YBq">
+                    <tabBarItem key="tabBarItem" title="" image="time-outline" selectedImage="time-selected" id="7Cs-Gw-YBq">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zPg-xL-pj1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -203,12 +204,12 @@
         <scene sceneID="7hh-a2-Phb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eQW-Xg-nSL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="add" id="rcV-XG-0tf">
+                    <tabBarItem key="tabBarItem" image="add" selectedImage="add-selected" id="rcV-XG-0tf">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="egX-iy-Yha">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -224,12 +225,12 @@
         <scene sceneID="rg0-Gc-ZT0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ekZ-Kf-F9P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="pie-chart" id="vPo-z5-5MP">
+                    <tabBarItem key="tabBarItem" title="" image="pie-chart" selectedImage="pie-chart-selected" id="vPo-z5-5MP">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vbr-7L-gSr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -241,10 +242,10 @@
             </objects>
             <point key="canvasLocation" x="904.34782608695662" y="742.63392857142856"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="Un6-Yx-tZh">
             <objects>
-                <tabBarController id="shY-7u-R8H" sceneMemberID="viewController">
+                <tabBarController id="shY-7u-R8H" customClass="MainTabBarViewController" customModule="TimeTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="idr-Iw-G3a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -253,6 +254,7 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="mainTabBar" destination="idr-Iw-G3a" id="3BW-oO-np0"/>
                         <segue destination="Fph-DP-dwk" kind="relationship" relationship="viewControllers" id="z74-MA-kn4"/>
                         <segue destination="eQW-Xg-nSL" kind="relationship" relationship="viewControllers" id="fQA-rP-oDf"/>
                         <segue destination="ekZ-Kf-F9P" kind="relationship" relationship="viewControllers" id="caU-1q-bdJ"/>
@@ -266,10 +268,13 @@
     <resources>
         <image name="Ellipse" width="16" height="16"/>
         <image name="add" width="32" height="32"/>
+        <image name="add-selected" width="48" height="48"/>
         <image name="more" width="24" height="24"/>
         <image name="pie-chart" width="24" height="24"/>
+        <image name="pie-chart-selected" width="28" height="28"/>
         <image name="right arrow" width="24" height="24"/>
         <image name="time-outline" width="24" height="24"/>
+        <image name="time-selected" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

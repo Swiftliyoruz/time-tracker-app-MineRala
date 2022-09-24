@@ -12,6 +12,8 @@ enum Constant {
     static let cellHeight: CGFloat = 100.0
     static let cellNibName = "TaskTableViewCell"
     static let cellReusIdentifier = "TaskTableViewCell"
+    static let navigationBarTitle = "Task"
+    static let tabBarTitle = ""
 }
 
 final class HomeViewController: UIViewController {
@@ -40,18 +42,21 @@ final class HomeViewController: UIViewController {
         self.rightArrowButton.setImage(Icon.rightArrowIcon, for: .normal)
         self.todayLabel.textColor = Color.cellTitleTextColor
         self.seeAllButton.titleLabel?.textColor = Color.cellTitleTextColor
+        tabBarController?.tabBar.items?.first?.image = Icon.timeOutlineIcon
+        tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
+        
     }
     
     private func setUpNavigationController() {
-        title = "Task"
-        tabBarController?.tabBar.items?.first?.title = ""
+        title = Constant.navigationBarTitle
+        tabBarController?.tabBar.items?.first?.title = Constant.tabBarTitle
         navigationController?.navigationBar.prefersLargeTitles = true
         let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     private func setUpUI() {
-        taskView.layer.cornerRadius = 8
+        taskView.layer.cornerRadius = CornerRadius.medium.rawValue
         taskTableView.register(UINib(nibName: Constant.cellNibName, bundle: nil), forCellReuseIdentifier: Constant.cellReusIdentifier)
         taskTableView.separatorStyle = .none
     }

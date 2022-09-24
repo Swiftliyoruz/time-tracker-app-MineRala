@@ -24,10 +24,9 @@ final class TaskTableViewCell: UITableViewCell {
     }
     
     private func setUpUI() {
-        print( cardView.frame.height)
-        self.cardView.layer.cornerRadius = 4
-        self.tagView.layer.cornerRadius = 4
-        self.tagTwoView.layer.cornerRadius = 4
+        self.cardView.layer.cornerRadius = CornerRadius.small.rawValue
+        self.tagView.layer.cornerRadius = CornerRadius.small.rawValue
+        self.tagTwoView.layer.cornerRadius = CornerRadius.small.rawValue
         
     }
     

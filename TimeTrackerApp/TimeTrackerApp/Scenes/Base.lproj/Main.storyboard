@@ -157,28 +157,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-Su-YyH">
-                                <rect key="frame" x="0.0" y="92" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="649"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bV2-5B-Xg1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jdy-oQ-5bR">
-                                                <rect key="frame" x="60" y="12" width="294" height="122"/>
+                                                <rect key="frame" x="60" y="12" width="294" height="106"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyz-qG-YCs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="JbU-Aq-ilh"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="0.0" width="294" height="56"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnD-i8-VyI">
-                                                        <rect key="frame" x="0.0" y="50" width="294" height="72"/>
+                                                        <rect key="frame" x="0.0" y="66" width="294" height="40"/>
+                                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Tei-X2-vWg"/>
                                                         </constraints>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -194,10 +193,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qG-hK-PUW">
-                                        <rect key="frame" x="0.0" y="146" width="414" height="146"/>
+                                        <rect key="frame" x="0.0" y="130" width="414" height="129.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oZk-Bh-rcj">
-                                                <rect key="frame" x="60" y="18" width="294" height="110"/>
+                                                <rect key="frame" x="60" y="18" width="294" height="93.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZU-th-sag">
                                                         <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
@@ -205,12 +204,12 @@
                                                             <constraint firstAttribute="height" constant="40" id="l0b-hh-5sJ"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnt-wq-nd3">
-                                                        <rect key="frame" x="0.0" y="50" width="294" height="60"/>
-                                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <rect key="frame" x="0.0" y="50" width="294" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <menu key="menu" id="86z-tH-HgH">
                                                             <children>
                                                                 <command title="Item 1" id="Eq7-fd-ezf"/>
@@ -235,10 +234,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uui-B5-Pc8">
-                                        <rect key="frame" x="0.0" y="292" width="414" height="146"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="414" height="130"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hzs-VX-jv4">
-                                                <rect key="frame" x="60" y="12" width="294" height="122"/>
+                                                <rect key="frame" x="60" y="12" width="294" height="106"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRR-8c-ZUw">
                                                         <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
@@ -246,11 +245,13 @@
                                                             <constraint firstAttribute="height" constant="40" id="Wgj-QV-Uzu"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lqv-BE-znD">
-                                                        <rect key="frame" x="0.0" y="50" width="294" height="72"/>
+                                                        <rect key="frame" x="0.0" y="50" width="294" height="56"/>
+                                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -266,23 +267,20 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTv-OD-jRf">
-                                        <rect key="frame" x="0.0" y="438" width="414" height="146"/>
+                                        <rect key="frame" x="0.0" y="389.5" width="414" height="129.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-Pg-bdh">
                                                 <rect key="frame" x="60" y="18" width="294" height="110"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLZ-6m-pLD">
                                                         <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="Tsx-oK-eRQ"/>
-                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="18"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-xi-zi4">
                                                         <rect key="frame" x="0.0" y="60" width="294" height="50"/>
-                                                        <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="0uc-dL-PRU"/>
                                                         </constraints>
@@ -304,26 +302,25 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="jSO-Pg-bdh" firstAttribute="leading" secondItem="fTv-OD-jRf" secondAttribute="leading" constant="60" id="LiA-tt-kJe"/>
-                                            <constraint firstAttribute="bottom" secondItem="jSO-Pg-bdh" secondAttribute="bottom" constant="18" id="avf-SR-mgT"/>
                                             <constraint firstAttribute="trailing" secondItem="jSO-Pg-bdh" secondAttribute="trailing" constant="60" id="lEA-xV-QJk"/>
                                             <constraint firstItem="jSO-Pg-bdh" firstAttribute="top" secondItem="fTv-OD-jRf" secondAttribute="top" constant="18" id="ym0-49-K4Y"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAk-WQ-xIY">
-                                        <rect key="frame" x="0.0" y="584" width="414" height="146"/>
+                                        <rect key="frame" x="0.0" y="519" width="414" height="130"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSW-uV-v3Z">
-                                <rect key="frame" x="40" y="838" width="334" height="40"/>
-                                <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="40" y="757" width="334" height="40"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="w4k-PH-X0d"/>
+                                    <constraint firstAttribute="height" constant="40" id="a7D-Oe-u77"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ADD">
-                                    <color key="baseForegroundColor" red="0.027450980392156862" green="0.015686274509803921" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="ULl-kU-2JU" eventType="touchUpInside" id="jhC-e9-6qa"/>
@@ -331,7 +328,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UYp-Oi-U4W"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1vw-Su-YyH" firstAttribute="top" secondItem="UYp-Oi-U4W" secondAttribute="top" id="0ec-cf-dxZ"/>
                             <constraint firstItem="UYp-Oi-U4W" firstAttribute="trailing" secondItem="zSW-uV-v3Z" secondAttribute="trailing" constant="40" id="2Sb-JI-cW3"/>

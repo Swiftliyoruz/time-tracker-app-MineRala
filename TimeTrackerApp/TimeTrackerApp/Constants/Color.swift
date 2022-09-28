@@ -16,9 +16,11 @@ struct Color {
     static var cellTagViewTwoColor: UIColor { UITraitCollection.current.userInterfaceStyle == .light ?  #colorLiteral(red: 1, green: 0.9227246642, blue: 0.9328266978, alpha: 1) : #colorLiteral(red: 0.2116626799, green: 0.1628367305, blue: 0.2947718501, alpha: 1) }
     static var cellTagViewLabelTextColor: UIColor { UITraitCollection.current.userInterfaceStyle == .light ?  #colorLiteral(red: 1, green: 0.2752893865, blue: 0.4094802737, alpha: 1) : #colorLiteral(red: 1, green: 0.2892884612, blue: 0.4244042635, alpha: 1) }
     static var cellTagViewTwoLabelTextColor: UIColor { UITraitCollection.current.userInterfaceStyle == .light ?  #colorLiteral(red: 0.6522679329, green: 0.297410816, blue: 0.9091938138, alpha: 1) : #colorLiteral(red: 0.6522679329, green: 0.297410816, blue: 0.9091938138, alpha: 1) }
+    static var borderColor: UIColor { UITraitCollection.current.userInterfaceStyle == .light ?  #colorLiteral(red: 0.9185261726, green: 0.9135600924, blue: 0.9222580791, alpha: 1) : #colorLiteral(red: 0.1986193061, green: 0.1838022172, blue: 0.2521200478, alpha: 1) }
 }
 
 struct DefaultColor {
     static let black = UIColor.black
     static let white = UIColor.white
+    static let borderColor = #colorLiteral(red: 0.9185261726, green: 0.9135600924, blue: 0.9222580791, alpha: 1)
 }

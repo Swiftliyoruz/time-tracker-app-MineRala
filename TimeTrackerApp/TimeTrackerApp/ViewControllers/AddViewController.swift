@@ -10,6 +10,28 @@ import UIKit
 enum AddViewConstant {
     static let navigationBarTitle = "Add Task"
     static let tabBarTitle = ""
+    static let borderWidth = 0.8
+    static let borderColor = DefaultColor.borderColor
+}
+
+enum MainCategories {
+    static let work = "Work"
+    static let personal = "Personal"
+}
+
+enum TaskIcons {
+    enum TaskIconTitles {
+        static let monitor = "Monitor"
+        static let code = "Code"
+        static let book = "Book"
+        static let sport = "Sport"
+    }
+    enum TaskIconImages {
+        static let monitor = "Icon Monitor Circle"
+        static let code = "Icon Code Circle"
+        static let book = "Icon Book Circle"
+        static let sport = "Icon Barbell Circle"
+    }
 }
 
 final class AddViewController: UIViewController, UINavigationBarDelegate {
@@ -27,48 +49,73 @@ final class AddViewController: UIViewController, UINavigationBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = AddViewConstant.navigationBarTitle
-        tabBarController?.tabBar.items?[1].title = AddViewConstant.tabBarTitle
-        addButton.titleLabel?.font = UIFont(name: Font.regular.rawValue, size: 14)
         setUpUI()
     }
     
     private func setUpNavigationController() {
         title = AddViewConstant.navigationBarTitle
-        tabBarController?.tabBar.items?.first?.title = AddViewConstant.tabBarTitle
-        navigationController?.navigationBar.prefersLargeTitles = true
+        tabBarController?.tabBar.items?[1].title = AddViewConstant.tabBarTitle
         let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
-    private func setUpUI() {
-        var mainCategoryClosure = {(action : UIAction ) in
-            //print(action.title)
+    private func setUpMainCategory() {
+        let mainCategoryClosure = {(action : UIAction ) in
+            print(action.title)
         }
         
         mainCategoryButton.menu = UIMenu(children: [
-            UIAction(title: "ABC", handler: mainCategoryClosure),
-            UIAction(title: "llaa", handler: mainCategoryClosure)
+            UIAction(title: MainCategories.personal, handler: mainCategoryClosure),
+            UIAction(title: MainCategories.work, handler: mainCategoryClosure)
         ])
         
-        mainCategoryClosure = { [self] (action: UIAction) in
+        mainCategoryButton.showsMenuAsPrimaryAction = true
+        mainCategoryButton.changesSelectionAsPrimaryAction = true
+    }
+    
+    private func setUpTaskIcon() {
+        let taskCategoryClosure = { [self] (action: UIAction) in
+            print(action.title)
             taskIconButton.setImage(action.image, for: .normal)
-            
         }
         
         taskIconButton.menu = UIMenu(children: [
-            UIAction(image:  UIImage(named: "Icon Monitor Circle"),handler: mainCategoryClosure),
-            UIAction(image:  UIImage(named: "Icon Code Circle"),handler: mainCategoryClosure),
-           
+            UIAction(title: TaskIcons.TaskIconTitles.book, image: UIImage(named: TaskIcons.TaskIconImages.book), handler: taskCategoryClosure),
+            UIAction(title: TaskIcons.TaskIconTitles.monitor, image: UIImage(named: TaskIcons.TaskIconImages.monitor), handler: taskCategoryClosure),
+            UIAction(title: TaskIcons.TaskIconTitles.code, image: UIImage(named: TaskIcons.TaskIconImages.code), handler: taskCategoryClosure),
+            UIAction(title: TaskIcons.TaskIconTitles.sport, image: UIImage(named: TaskIcons.TaskIconImages.sport), handler: taskCategoryClosure),
         ])
-       
-
-        mainCategoryButton.showsMenuAsPrimaryAction = true
-        mainCategoryButton.changesSelectionAsPrimaryAction = true
-      
-                                     taskIconButton.showsMenuAsPrimaryAction = true
-                                     taskIconButton.changesSelectionAsPrimaryAction = true
+        
+        taskIconButton.showsMenuAsPrimaryAction = true
+        taskIconButton.changesSelectionAsPrimaryAction = true
     }
+    
+    private func setUpButtonBorder() {
+        let buttonList = [addButton, mainCategoryButton, taskIconButton]
+        for button in buttonList {
+            button!.layer.cornerRadius = CornerRadius.medium.rawValue
+            button!.layer.borderWidth = AddViewConstant.borderWidth
+            button!.layer.borderColor = AddViewConstant.borderColor.cgColor
+        }
+    }
+    
+    private func setUpTextField() {
+        taskTitleTextField.returnKeyType = .done
+        taskTitleTextField.delegate = self
+        subCategoryTextField.returnKeyType = .done
+        subCategoryTextField.delegate = self
+    
+    }
+    
+    private func setUpUI() {
+        addButton.titleLabel?.font = UIFont(name: Font.regular.rawValue, size: 14)
+        setUpNavigationController()
+        setUpMainCategory()
+        setUpTaskIcon()
+        setUpButtonBorder()
+        setUpTextField()
+    }
+    
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.view.backgroundColor = Color.viewControllerBackgroundColor
@@ -84,10 +131,25 @@ final class AddViewController: UIViewController, UINavigationBarDelegate {
         self.taskIconButton.backgroundColor = Color.cellBackgroundColor
         self.addButton.titleLabel?.textColor = Color.cellTitleTextColor
         self.addButton.backgroundColor = Color.cellBackgroundColor
-        
+        self.addButton.layer.borderColor = Color.borderColor.cgColor
+        self.mainCategoryButton.layer.borderColor = Color.borderColor.cgColor
+        self.taskIconButton.layer.borderColor = Color.borderColor.cgColor
         
     }
 }
+
+//MARK: - UITextField Delegate
+extension AddViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if let textFieldText = textField.text {
+            print("Tapped done, text: \(textFieldText)")
+        }
+        return true
+    }
+}
+
+
 
 //MARK: - Actions
 extension AddViewController {

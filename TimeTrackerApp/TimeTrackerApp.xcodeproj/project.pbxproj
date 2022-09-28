@@ -12,6 +12,7 @@
 		E8B53E8928D74D6F00C207B9 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B53E8828D74D6F00C207B9 /* Icon.swift */; };
 		E8B53E9228D765F800C207B9 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B53E9028D765F800C207B9 /* TaskTableViewCell.swift */; };
 		E8B53E9328D765F800C207B9 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B53E9128D765F800C207B9 /* TaskTableViewCell.xib */; };
+		E8BAD46328E4F0F3007F2027 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8BAD46128E4F0F3007F2027 /* DataModel.xcdatamodeld */; };
 		E8BC99B128CE4875007C4416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BC99B028CE4875007C4416 /* AppDelegate.swift */; };
 		E8BC99B328CE4875007C4416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BC99B228CE4875007C4416 /* SceneDelegate.swift */; };
 		E8BC99B528CE4875007C4416 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BC99B428CE4875007C4416 /* HomeViewController.swift */; };
@@ -39,6 +40,7 @@
 		E8B53E8828D74D6F00C207B9 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		E8B53E9028D765F800C207B9 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		E8B53E9128D765F800C207B9 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
+		E8BAD46228E4F0F3007F2027 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		E8BC99AD28CE4875007C4416 /* TimeTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BC99B028CE4875007C4416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BC99B228CE4875007C4416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				E8BC99DB28CE7516007C4416 /* ViewControllers */,
 				E8B53E8A28D7651800C207B9 /* Cells */,
 				E8BC99B928CE4875007C4416 /* Assets.xcassets */,
+				E8BAD46128E4F0F3007F2027 /* DataModel.xcdatamodeld */,
 				E8BC99BE28CE4875007C4416 /* Info.plist */,
 			);
 			path = TimeTrackerApp;
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BAD46328E4F0F3007F2027 /* DataModel.xcdatamodeld in Sources */,
 				E8F4CC1228DCD026007A6A39 /* Number.swift in Sources */,
 				E8BC99B528CE4875007C4416 /* HomeViewController.swift in Sources */,
 				E8BC99E228CE82F6007C4416 /* Color.swift in Sources */,
@@ -484,6 +488,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8BAD46128E4F0F3007F2027 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8BAD46228E4F0F3007F2027 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = E8BAD46228E4F0F3007F2027 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E8BC99A528CE4875007C4416 /* Project object */;
 }

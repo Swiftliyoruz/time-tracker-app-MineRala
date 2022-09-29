@@ -26,6 +26,7 @@ final class DataAccessLayer {
         
         do {
             try context.save()
+            print("Title: \(title), Main Category: \(mainCategory)")
         } catch {
             print("Core Data Add Task Error!!!")
         }

@@ -163,6 +163,8 @@ extension AddViewController {
     
     @IBAction func addButtonTapped(_ sender: Any) {
         
+        DataAccessLayer.addTask(title: taskTitleTextField.text!, mainCategory: mainCategoryButton.currentTitle!, subCategory: subCategoryTextField.text!, icon: (taskIconButton.currentImage?.pngData())!, time: 5)
+        
     }
 
 }

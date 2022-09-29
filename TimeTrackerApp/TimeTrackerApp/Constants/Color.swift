@@ -20,7 +20,7 @@ struct Color {
 }
 
 struct DefaultColor {
-    static let black = UIColor.black
-    static let white = UIColor.white
+    static let black =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    static let white = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     static let borderColor = #colorLiteral(red: 0.9185261726, green: 0.9135600924, blue: 0.9222580791, alpha: 1)
 }

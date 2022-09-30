@@ -14,22 +14,14 @@ final class DataAccessLayer {
         return appDelegate.persistentContainer.viewContext
     }
     
-    static func addTask(title: String, mainCategory: String, subCategory: String, icon: Data, time: Float) {
-        let context = getContext()
-        let entitiy = NSEntityDescription.entity(forEntityName: "Task", in: context)
-        let task = NSManagedObject(entity: entitiy!, insertInto: context)
-        task.setValue(title, forKey: "title")
-        task.setValue(mainCategory, forKey: "mainCategory")
-        task.setValue(subCategory, forKey: "subCategory")
-        task.setValue(icon, forKey: "icon")
-        task.setValue(time, forKey: "time")
-        
+    static func addTask(task: Task) {
         do {
-            try context.save()
-            print("Title: \(title), Main Category: \(mainCategory)")
-        } catch {
+            try self.getContext().save()
+        }
+        catch {
             print("Core Data Add Task Error!!!")
         }
+        print(task.self)
     }
     
     static func fetchTasks() -> [Task]? {

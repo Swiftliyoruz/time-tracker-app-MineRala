@@ -26,27 +26,20 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var taskTableView: UITableView!
     
     var textAttributesColor = DefaultColor.black
-   
+    
+}
+
+//MARK: - Lifecycle
+extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationController()
         setUpUI()
     }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.view.backgroundColor = Color.viewControllerBackgroundColor
-        self.taskView.backgroundColor = Color.cellBackgroundColor
-        self.textAttributesColor = Color.navigationTitleColor
-        self.titleLabel.textColor = Color.cellTitleTextColor
-        self.timeLabel.textColor = Color.cellTitleTextColor
-        self.rightArrowButton.setImage(Icon.rightArrowIcon, for: .normal)
-        self.todayLabel.textColor = Color.cellTitleTextColor
-        self.seeAllButton.titleLabel?.textColor = Color.cellTitleTextColor
-        tabBarController?.tabBar.items?.first?.image = Icon.timeOutlineIcon
-        tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
-        
-    }
-    
+}
+
+//MARK: - Set Up UI
+extension HomeViewController {
     private func setUpNavigationController() {
         title = HomeViewConstant.navigationBarTitle
         tabBarController?.tabBar.items?.first?.title = HomeViewConstant.tabBarTitle
@@ -59,6 +52,23 @@ final class HomeViewController: UIViewController {
         taskView.layer.cornerRadius = CornerRadius.medium.rawValue
         taskTableView.register(UINib(nibName: HomeViewConstant.cellNibName, bundle: nil), forCellReuseIdentifier: HomeViewConstant.cellReuseIdentifier)
         taskTableView.separatorStyle = .none
+    }
+}
+
+//MARK: - Trait Collection
+extension HomeViewController {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.view.backgroundColor = Color.viewControllerBackgroundColor
+        self.taskView.backgroundColor = Color.cellBackgroundColor
+        self.textAttributesColor = Color.navigationTitleColor
+        self.titleLabel.textColor = Color.cellTitleTextColor
+        self.timeLabel.textColor = Color.cellTitleTextColor
+        self.rightArrowButton.setImage(Icon.rightArrowIcon, for: .normal)
+        self.todayLabel.textColor = Color.cellTitleTextColor
+        self.seeAllButton.titleLabel?.textColor = Color.cellTitleTextColor
+        tabBarController?.tabBar.items?.first?.image = Icon.timeOutlineIcon
+        tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
+        
     }
 }
 

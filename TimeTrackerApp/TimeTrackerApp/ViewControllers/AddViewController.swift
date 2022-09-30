@@ -46,12 +46,19 @@ final class AddViewController: UIViewController, UINavigationBarDelegate {
     @IBOutlet weak var addButton: UIButton!
     
     var textAttributesColor = DefaultColor.black
-    
+
+}
+
+//MARK: - Lifecycle
+extension AddViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
     }
-    
+}
+
+//MARK: - Set Up UI
+extension AddViewController {
     private func setUpNavigationController() {
         title = AddViewConstant.navigationBarTitle
         tabBarController?.tabBar.items?[1].title = AddViewConstant.tabBarTitle
@@ -115,8 +122,10 @@ final class AddViewController: UIViewController, UINavigationBarDelegate {
         setUpButtonBorder()
         setUpTextField()
     }
-    
-    
+}
+
+//MARK: - Trait Collection
+extension AddViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.view.backgroundColor = Color.viewControllerBackgroundColor
         self.taskTitleLabel.textColor = Color.cellTitleTextColor
@@ -149,22 +158,17 @@ extension AddViewController: UITextFieldDelegate {
     }
 }
 
-
-
 //MARK: - Actions
 extension AddViewController {
-    @IBAction func mainCategoryButtonTapped(_ sender: Any) {
-        
-    }
-    
-    @IBAction func taskIconButtonTapped(_ sender: Any) {
-        
-    }
-    
     @IBAction func addButtonTapped(_ sender: Any) {
+        let newTask = Task(context: DataAccessLayer.getContext())
+        newTask.title = taskTitleTextField.text
+        newTask.mainCategory = mainCategoryButton.currentTitle
+        newTask.subCategory = subCategoryTextField.text
+        newTask.icon = taskIconButton.currentImage?.pngData() != nil ? taskIconButton.currentImage?.pngData() : UIImage(named: TaskIcons.TaskIconImages.book)?.pngData()
+        newTask.time = 15.66
         
-        DataAccessLayer.addTask(title: taskTitleTextField.text!, mainCategory: mainCategoryButton.currentTitle!, subCategory: subCategoryTextField.text!, icon: (taskIconButton.currentImage?.pngData())!, time: 5)
+        DataAccessLayer.addTask(task: newTask)
         
     }
-
 }

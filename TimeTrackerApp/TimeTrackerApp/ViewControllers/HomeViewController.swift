@@ -8,7 +8,6 @@
 import UIKit
 
 enum HomeViewConstant {
-    static let tableViewItem = 20
     static let cellHeight: CGFloat = 100.0
     static let cellNibName = "TaskTableViewCell"
     static let cellReuseIdentifier = "TaskTableViewCell"
@@ -26,6 +25,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var taskTableView: UITableView!
     
     var textAttributesColor = DefaultColor.black
+    var tasks = [Task]()
     
 }
 
@@ -35,6 +35,13 @@ extension HomeViewController {
         super.viewDidLoad()
         setUpNavigationController()
         setUpUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DataAccessLayer.getContext().rollback() // WHY?
+        tasks = DataAccessLayer.fetchTasks() ?? []
+        taskTableView.reloadData()
     }
 }
 
@@ -75,12 +82,13 @@ extension HomeViewController {
 //MARK: - TableView Delegate && DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        HomeViewConstant.tableViewItem
+        tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewConstant.cellReuseIdentifier, for: indexPath) as! TaskTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewConstant.cellReuseIdentifier, for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
         cell.selectionStyle = .none
+        cell.configureCell(task: tasks[indexPath.row])
         return cell
     }
     

@@ -27,6 +27,8 @@ final class TaskTableViewCell: UITableViewCell {
         self.cardView.layer.cornerRadius = CornerRadius.small.rawValue
         self.tagView.layer.cornerRadius = CornerRadius.small.rawValue
         self.tagTwoView.layer.cornerRadius = CornerRadius.small.rawValue
+        self.tagTwoLabel.adjustsFontSizeToFitWidth = true
+        self.tagTwoLabel.minimumScaleFactor = 0.5
         
     }
     
@@ -41,6 +43,14 @@ final class TaskTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
+    }
+    
+    func configureCell(task: Task) {
+        titleLabel.text = task.title
+        iconImageView.image = UIImage(data: task.icon!)
+        tagLabel.text = task.mainCategory
+        tagTwoLabel.text = task.subCategory
+        timeLabel.text = String(task.time)
     }
     
 }

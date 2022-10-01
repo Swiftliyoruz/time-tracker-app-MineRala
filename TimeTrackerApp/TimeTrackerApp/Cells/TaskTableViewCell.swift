@@ -24,20 +24,20 @@ final class TaskTableViewCell: UITableViewCell {
     }
     
     private func setUpUI() {
-        self.cardView.layer.cornerRadius = CornerRadius.small.rawValue
-        self.tagView.layer.cornerRadius = CornerRadius.small.rawValue
-        self.tagTwoView.layer.cornerRadius = CornerRadius.small.rawValue
-        self.tagTwoLabel.adjustsFontSizeToFitWidth = true
-        self.tagTwoLabel.minimumScaleFactor = 0.5
+        cardView.layer.cornerRadius = CornerRadius.small.rawValue
+        tagView.layer.cornerRadius = CornerRadius.small.rawValue
+        tagTwoView.layer.cornerRadius = CornerRadius.small.rawValue
+        tagTwoLabel.adjustsFontSizeToFitWidth = true
+        tagTwoLabel.minimumScaleFactor = 0.5
         
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.cardView.backgroundColor = Color.cellBackgroundColor
-        self.tagView.backgroundColor = Color.cellTagViewColor
-        self.tagTwoView.backgroundColor = Color.cellTagViewTwoColor
-        self.tagLabel.textColor = Color.cellTagViewLabelTextColor
-        self.tagTwoLabel.textColor = Color.cellTagViewTwoLabelTextColor
+        cardView.backgroundColor = Color.cellBackgroundColor
+        tagView.backgroundColor = Color.cellTagViewColor
+        tagTwoView.backgroundColor = Color.cellTagViewTwoColor
+        tagLabel.textColor = Color.cellTagViewLabelTextColor
+        tagTwoLabel.textColor = Color.cellTagViewTwoLabelTextColor
     }
     
     override func layoutSubviews() {

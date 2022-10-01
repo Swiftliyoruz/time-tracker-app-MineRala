@@ -11,6 +11,7 @@
 		E81A6FFB28E6F258004D77F6 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81A6FF928E6F258004D77F6 /* Task+CoreDataProperties.swift */; };
 		E85BA88128CF565B00ED5E1E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85BA88028CF565B00ED5E1E /* AddViewController.swift */; };
 		E85BA88328CF566B00ED5E1E /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85BA88228CF566B00ED5E1E /* ReportViewController.swift */; };
+		E88177AF28E8B94300591724 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88177AE28E8B94300591724 /* Array+Extension.swift */; };
 		E88F83B428E75CBF00B56CE1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F83B328E75CBF00B56CE1 /* UIViewController+Extension.swift */; };
 		E88F83B728E7613B00B56CE1 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F83B628E7613B00B56CE1 /* UIWindow+Extension.swift */; };
 		E88F83B928E7639A00B56CE1 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F83B828E7639A00B56CE1 /* UIFont+Extension.swift */; };
@@ -45,6 +46,7 @@
 		E81A6FF928E6F258004D77F6 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E85BA88028CF565B00ED5E1E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		E85BA88228CF566B00ED5E1E /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		E88177AE28E8B94300591724 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		E88F83B328E75CBF00B56CE1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E88F83B628E7613B00B56CE1 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		E88F83B828E7639A00B56CE1 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				E88F83B328E75CBF00B56CE1 /* UIViewController+Extension.swift */,
 				E88F83B628E7613B00B56CE1 /* UIWindow+Extension.swift */,
 				E88F83B828E7639A00B56CE1 /* UIFont+Extension.swift */,
+				E88177AE28E8B94300591724 /* Array+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				E8BAD46328E4F0F3007F2027 /* DataModel.xcdatamodeld in Sources */,
 				E88F83B728E7613B00B56CE1 /* UIWindow+Extension.swift in Sources */,
 				E8C3C70028E6378600310881 /* DataAccessLayer.swift in Sources */,
+				E88177AF28E8B94300591724 /* Array+Extension.swift in Sources */,
 				E81A6FFA28E6F258004D77F6 /* Task+CoreDataClass.swift in Sources */,
 				E8F4CC1228DCD026007A6A39 /* Number.swift in Sources */,
 				E81A6FFB28E6F258004D77F6 /* Task+CoreDataProperties.swift in Sources */,

@@ -9,14 +9,16 @@ import UIKit
 import CoreData
 
 final class DataAccessLayer {
-    static func getContext() -> NSManagedObjectContext {
+    // Singelton - static diffrence ? 
+    // complexity değeri O(1) olduğu için fonksiyon yerine computed property yapmak daha verimli.
+    static var context: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
     
     static func addTask(task: Task) {
         do {
-            try self.getContext().save()
+            try context.save()
         }
         catch {
             print("Core Data Add Task Error!!!")
@@ -27,7 +29,7 @@ final class DataAccessLayer {
     static func fetchTasks() -> [Task]? {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         do {
-            return try getContext().fetch(fetchRequest)
+            return try context.fetch(fetchRequest)
         } catch {
             print("Fetch Tasks Error!!!")
         }
@@ -35,7 +37,7 @@ final class DataAccessLayer {
     }
     
     static func deleteTask(task: Task) {
-        getContext().delete(task)
-        try? getContext().save()
+        context.delete(task)
+        try? context.save()
     }
 }

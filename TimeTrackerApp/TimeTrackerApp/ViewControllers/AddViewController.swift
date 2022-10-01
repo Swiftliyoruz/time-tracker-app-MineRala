@@ -115,7 +115,7 @@ extension AddViewController {
     }
     
     private func setUpUI() {
-        addButton.titleLabel?.font = UIFont(name: Font.regular.rawValue, size: 14)
+        addButton.titleLabel?.font = UIFont.setFont(type: Font.regular.rawValue, size: 14)
         setUpNavigationController()
         setUpMainCategory()
         setUpTaskIcon()
@@ -170,5 +170,9 @@ extension AddViewController {
         
         DataAccessLayer.addTask(task: newTask)
         
+        showToast(in: view, message: "The task has been successfully added.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.tabBarController?.selectedIndex = 0
+        }
     }
 }

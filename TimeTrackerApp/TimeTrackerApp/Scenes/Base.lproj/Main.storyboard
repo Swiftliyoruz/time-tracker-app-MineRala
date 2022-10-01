@@ -20,7 +20,7 @@
         <!--Home View Controller-->
         <scene sceneID="j31-K2-Aah">
             <objects>
-                <viewController id="mxP-52-Pv4" customClass="HomeViewController" customModule="TimeTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="mxP-52-Pv4" customClass="HomeViewController" customModule="TimeTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wi4-nS-nBJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -431,7 +431,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Un6-Yx-tZh">
             <objects>
-                <tabBarController id="shY-7u-R8H" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarcontroller" id="shY-7u-R8H" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="idr-Iw-G3a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

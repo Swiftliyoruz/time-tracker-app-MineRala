@@ -20,7 +20,4 @@ enum Font: String {
     case mediumItalic = "Rubik-MediumItalic"
     case regular = "Rubik-Regular"
     
-    func font(with size: CGFloat) -> UIFont {
-        return UIFont(name: self.rawValue, size: size)!
-    }
 }

@@ -26,7 +26,6 @@ final class HomeViewController: UIViewController {
     
     var textAttributesColor = DefaultColor.black
     var tasks = [Task]()
-    
 }
 
 //MARK: - Lifecycle

@@ -74,7 +74,6 @@ extension HomeViewController {
         self.seeAllButton.titleLabel?.textColor = Color.cellTitleTextColor
         tabBarController?.tabBar.items?.first?.image = Icon.timeOutlineIcon
         tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
-        
     }
 }
 
@@ -93,5 +92,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         HomeViewConstant.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: NSLocalizedString("Delete", comment: "")) { [weak self] (action, view, completionHandler) in
+            guard let self = self else {
+                completionHandler(false)
+                return
+            }
+            self.handleDelete(indexPath: indexPath)
+            completionHandler(true)
+        }
+        delete.backgroundColor = UIColor.red.withAlphaComponent(0.5)
+        let configuration = UISwipeActionsConfiguration(actions: [delete])
+        return configuration
+    }
+    
+    private func handleDelete(indexPath: IndexPath) {
+        showAlertDelete(controller: self, NSLocalizedString("Are you sure you want to delete this task from  list?", comment: "")) { [self] in
+            DataAccessLayer.deleteTask(task: tasks[indexPath.row])
+            tasks = DataAccessLayer.fetchTasks()!
+            taskTableView.deleteRows(at: [indexPath], with: .fade)
+            taskTableView.reloadData()
+        }
     }
 }

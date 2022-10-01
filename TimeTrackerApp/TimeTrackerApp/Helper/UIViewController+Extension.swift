@@ -10,8 +10,8 @@ import UIKit
 extension UIViewController {
     public func showToast(in view: UIView, message: String, size: CGSize = CGSize(width: 250, height: 50)) {
         let toastLabel = UILabel(frame: CGRect(x: (view.frame.size.width / 2) - 125, y: view.frame.size.height - 150, width: size.width, height: size.height))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.65)
-        toastLabel.textColor = UIColor.white
+        toastLabel.backgroundColor = DefaultColor.black.withAlphaComponent(0.65)
+        toastLabel.textColor = DefaultColor.white
         toastLabel.font = UIFont.setFont(type: Font.medium.rawValue, size: 14)
         toastLabel.textAlignment = .center
         toastLabel.text = message
@@ -33,6 +33,19 @@ extension UIViewController {
                 })
             })
         }
-        
+    }
+    
+    func showAlertDelete(controller: UIViewController, _ message: String, deletion: @escaping () -> Void) {
+        let dialogMessage = UIAlertController(title: NSLocalizedString("Deletion Confirmation", comment: ""), message: message, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .default, handler: { (action) in
+         deletion()
+         })
+        deleteAction.setValue(UIColor.red, forKey: "titleTextColor")
+         dialogMessage.addAction(deleteAction)
+
+        dialogMessage.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: { (action) in
+            print("cancel is tapped.")
+         }))
+         controller.present(dialogMessage, animated: true, completion: {})
     }
 }

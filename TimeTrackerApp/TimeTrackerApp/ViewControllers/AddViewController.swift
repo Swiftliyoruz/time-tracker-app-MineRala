@@ -169,6 +169,11 @@ extension AddViewController {
         newTask.time = 15.66
         
         DataAccessLayer.addTask(task: newTask)
+    
+        taskTitleTextField.text?.removeAll()
+        //mainCategoryButton.currentTitle?.removeAll()
+        subCategoryTextField.text?.removeAll()
+        //taskIconButton.currentImage.removeAll()
         
         showToast(in: view, message: "The task has been successfully added.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {

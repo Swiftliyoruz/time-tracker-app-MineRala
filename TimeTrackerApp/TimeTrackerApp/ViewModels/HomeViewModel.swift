@@ -14,6 +14,7 @@ protocol HomeViewModelDelegate: AnyObject {
     func traitCollectionDidChange()
     func reloadTable()
     func handleDelete(indexPath: IndexPath)
+    func deleteRows(indexPath: IndexPath)
 }
 
 protocol HomeViewModelInterface {
@@ -23,7 +24,8 @@ protocol HomeViewModelInterface {
     var taskList: [Task] { get set }
     func viewDidLoad()
     func viewDidAppear()
-    func deleteTask(indexPath: IndexPath)
+    func handleDeletion(indexPath: IndexPath)
+    func deneme(indexPath: IndexPath)
 }
 
 private extension HomeViewModel {
@@ -40,6 +42,7 @@ final class HomeViewModel {
 // Interface viewModel de implemente edilir...Delegate viewControllerda implemente edilir.
 //MARK: - HomeViewModelInterface
 extension HomeViewModel: HomeViewModelInterface {
+
     var taskList: [Task] {
         get {
             DataAccessLayer.fetchTasks() ?? []
@@ -66,7 +69,16 @@ extension HomeViewModel: HomeViewModelInterface {
         delegate?.reloadTable()
     }
     
-    func deleteTask(indexPath: IndexPath) {
+    func handleDeletion(indexPath: IndexPath) {
         delegate?.handleDelete(indexPath: indexPath)
     }
+
+    func deneme(indexPath: IndexPath) {
+        DataAccessLayer.deleteTask(task: taskList[indexPath.row])
+        guard let taskList = DataAccessLayer.fetchTasks() else { return }
+        self.taskList = taskList
+        delegate?.deleteRows(indexPath: indexPath)
+        delegate?.reloadTable()
+    }
+    
 }

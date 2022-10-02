@@ -39,7 +39,6 @@ final class HomeViewController: UIViewController {
         viewModel.viewDidAppear()
     }
 
-    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         traitCollectionDidChange()
@@ -75,7 +74,7 @@ extension HomeViewController: UITableViewDelegate{
                 completionHandler(false)
                 return
             }
-            self.viewModel.deleteTask(indexPath: indexPath)
+            self.viewModel.handleDeletion(indexPath: indexPath)
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.red.withAlphaComponent(0.5)
@@ -86,7 +85,7 @@ extension HomeViewController: UITableViewDelegate{
 
 //MARK: - HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
-     func setUpNavigationController() {
+func setUpNavigationController() {
         title = HomeViewConstant.navigationBarTitle
         tabBarController?.tabBar.items?.first?.title = HomeViewConstant.tabBarTitle
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -119,10 +118,11 @@ extension HomeViewController: HomeViewModelDelegate {
     
     func handleDelete(indexPath: IndexPath) {
        showAlertDelete(controller: self, NSLocalizedString("Are you sure you want to delete this task from  list?", comment: "")) { [self] in
-           DataAccessLayer.deleteTask(task: viewModel.taskList[indexPath.row])
-           viewModel.taskList = DataAccessLayer.fetchTasks()!
-           taskTableView.deleteRows(at: [indexPath], with: .fade)
-           reloadTable()
+           viewModel.deneme(indexPath: indexPath)
        }
+    }
+    
+    func deleteRows(indexPath: IndexPath) {
+        taskTableView.deleteRows(at: [indexPath], with: .fade)
     }
 }

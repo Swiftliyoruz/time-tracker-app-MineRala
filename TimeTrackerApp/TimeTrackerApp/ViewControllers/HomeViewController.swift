@@ -75,7 +75,7 @@ extension HomeViewController: UITableViewDelegate{
                 completionHandler(false)
                 return
             }
-            self.handleDelete(indexPath: indexPath)
+            self.viewModel.deleteTask(indexPath: indexPath)
             completionHandler(true)
         }
         delete.backgroundColor = UIColor.red.withAlphaComponent(0.5)
@@ -113,7 +113,7 @@ extension HomeViewController: HomeViewModelDelegate {
         tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
     }
     
-    func reloadData() {
+    func reloadTable() {
         taskTableView.reloadData()
     }
     
@@ -122,7 +122,7 @@ extension HomeViewController: HomeViewModelDelegate {
            DataAccessLayer.deleteTask(task: viewModel.taskList[indexPath.row])
            viewModel.taskList = DataAccessLayer.fetchTasks()!
            taskTableView.deleteRows(at: [indexPath], with: .fade)
-           taskTableView.reloadData()
+           reloadTable()
        }
-}
+    }
 }

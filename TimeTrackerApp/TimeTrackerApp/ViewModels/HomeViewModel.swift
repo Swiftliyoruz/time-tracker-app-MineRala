@@ -8,11 +8,11 @@
 import Foundation
 
 protocol HomeViewModelDelegate: AnyObject {
-    // Actionlar delegate üzerinden yapılacak.
+    // Aksiyonlar delegate üzerinden yapılacak.
     func setUpNavigationController()
     func setUpUI()
     func traitCollectionDidChange()
-    func reloadData()
+    func reloadTable()
     func handleDelete(indexPath: IndexPath)
 }
 
@@ -23,7 +23,7 @@ protocol HomeViewModelInterface {
     var taskList: [Task] { get set }
     func viewDidLoad()
     func viewDidAppear()
-    
+    func deleteTask(indexPath: IndexPath)
 }
 
 private extension HomeViewModel {
@@ -37,9 +37,9 @@ final class HomeViewModel {
     
 }
 
-//MARK: -
+// Interface viewModel de implemente edilir...Delegate viewControllerda implemente edilir.
+//MARK: - HomeViewModelInterface
 extension HomeViewModel: HomeViewModelInterface {
-    
     var taskList: [Task] {
         get {
             DataAccessLayer.fetchTasks() ?? []
@@ -63,6 +63,10 @@ extension HomeViewModel: HomeViewModelInterface {
     
     func viewDidAppear() {
         print("View Did Appear")
-        delegate?.reloadData()
+        delegate?.reloadTable()
+    }
+    
+    func deleteTask(indexPath: IndexPath) {
+        delegate?.handleDelete(indexPath: indexPath)
     }
 }

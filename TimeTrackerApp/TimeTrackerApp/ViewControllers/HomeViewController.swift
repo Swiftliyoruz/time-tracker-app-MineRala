@@ -118,7 +118,7 @@ func setUpNavigationController() {
     
     func handleDelete(indexPath: IndexPath) {
        showAlertDelete(controller: self, NSLocalizedString("Are you sure you want to delete this task from  list?", comment: "")) { [self] in
-           viewModel.deneme(indexPath: indexPath)
+           viewModel.deleteItem(indexPath: indexPath)
        }
     }
     

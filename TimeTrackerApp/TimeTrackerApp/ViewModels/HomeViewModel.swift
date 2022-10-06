@@ -25,7 +25,7 @@ protocol HomeViewModelInterface {
     func viewDidLoad()
     func viewDidAppear()
     func handleDeletion(indexPath: IndexPath)
-    func deneme(indexPath: IndexPath)
+    func deleteItem(indexPath: IndexPath)
 }
 
 private extension HomeViewModel {
@@ -68,12 +68,12 @@ extension HomeViewModel: HomeViewModelInterface {
         print("View Did Appear")
         delegate?.reloadTable()
     }
-    
+
     func handleDeletion(indexPath: IndexPath) {
         delegate?.handleDelete(indexPath: indexPath)
     }
 
-    func deneme(indexPath: IndexPath) {
+     func deleteItem(indexPath: IndexPath) {
         DataAccessLayer.deleteTask(task: taskList[indexPath.row])
         guard let taskList = DataAccessLayer.fetchTasks() else { return }
         self.taskList = taskList

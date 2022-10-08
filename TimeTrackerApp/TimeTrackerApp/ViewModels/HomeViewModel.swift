@@ -8,11 +8,10 @@
 import Foundation
 
 protocol HomeViewModelDelegate: AnyObject {
-    // Aksiyonlar delegate üzerinden yapılacak.
     func setUpNavigationController()
     func setUpUI()
     func traitCollectionDidChange()
-    func reloadTable()
+    func reloadData()
     func handleDelete(indexPath: IndexPath)
     func deleteRows(indexPath: IndexPath)
 }
@@ -22,6 +21,7 @@ protocol HomeViewModelInterface {
     var numberOfRowsInSection: Int { get }
     var heightForRowAt: Double { get }
     var taskList: [Task] { get set }
+    var textAttributesColor: String { get set }
     func viewDidLoad()
     func viewDidAppear()
     func handleDeletion(indexPath: IndexPath)
@@ -39,10 +39,9 @@ final class HomeViewModel {
     
 }
 
-// Interface viewModel de implemente edilir...Delegate viewControllerda implemente edilir.
 //MARK: - HomeViewModelInterface
 extension HomeViewModel: HomeViewModelInterface {
-
+    
     var taskList: [Task] {
         get {
             DataAccessLayer.fetchTasks() ?? []
@@ -58,6 +57,13 @@ extension HomeViewModel: HomeViewModelInterface {
         Constant.cellHeight
     }
     
+    var textAttributesColor: String {
+        get {
+            return "000000"
+        }
+        set { }
+    }
+    
     func viewDidLoad() {
         print("View Did Load")
         delegate?.setUpNavigationController()
@@ -66,19 +72,19 @@ extension HomeViewModel: HomeViewModelInterface {
     
     func viewDidAppear() {
         print("View Did Appear")
-        delegate?.reloadTable()
+        delegate?.reloadData()
     }
-
+    
     func handleDeletion(indexPath: IndexPath) {
         delegate?.handleDelete(indexPath: indexPath)
     }
-
-     func deleteItem(indexPath: IndexPath) {
+    
+    func deleteItem(indexPath: IndexPath) {
         DataAccessLayer.deleteTask(task: taskList[indexPath.row])
         guard let taskList = DataAccessLayer.fetchTasks() else { return }
         self.taskList = taskList
         delegate?.deleteRows(indexPath: indexPath)
-        delegate?.reloadTable()
+        delegate?.reloadData()
     }
     
 }

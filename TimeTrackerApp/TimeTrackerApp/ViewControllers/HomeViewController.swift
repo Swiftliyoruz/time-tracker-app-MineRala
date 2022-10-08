@@ -23,8 +23,6 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var todayLabel: UILabel!
     @IBOutlet private weak var taskTableView: UITableView!
     
-    var textAttributesColor = DefaultColor.black
-    
     private lazy var viewModel: HomeViewModelInterface = HomeViewModel()
         //{ didSet { viewModel.delegate = self } }
 
@@ -41,11 +39,8 @@ final class HomeViewController: UIViewController {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        traitCollectionDidChange()
-        print("trait")
+        viewModel.delegate?.traitCollectionDidChange()
     }
-
-   
 }
 
 //MARK: - TableView DataSource
@@ -89,7 +84,7 @@ func setUpNavigationController() {
         title = HomeViewConstant.navigationBarTitle
         tabBarController?.tabBar.items?.first?.title = HomeViewConstant.tabBarTitle
         navigationController?.navigationBar.prefersLargeTitles = true
-        let textAttributes = [NSAttributedString.Key.foregroundColor: textAttributesColor]
+    let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(hexString: viewModel.textAttributesColor)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
@@ -102,7 +97,7 @@ func setUpNavigationController() {
     func traitCollectionDidChange() {
         view.backgroundColor = Color.viewControllerBackgroundColor
         taskView.backgroundColor = Color.cellBackgroundColor
-        textAttributesColor = Color.navigationTitleColor
+       // textAttributesColor = Color.navigationTitleColor
         titleLabel.textColor = Color.cellTitleTextColor
         timeLabel.textColor = Color.cellTitleTextColor
         rightArrowButton.setImage(Icon.rightArrowIcon, for: .normal)
@@ -112,7 +107,7 @@ func setUpNavigationController() {
         tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
     }
     
-    func reloadTable() {
+    func reloadData() {
         taskTableView.reloadData()
     }
     

@@ -147,6 +147,35 @@
             </objects>
             <point key="canvasLocation" x="1795.6521739130437" y="-713.16964285714278"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="0Hi-7X-d2Q">
+            <objects>
+                <viewController id="uds-6c-yJu" customClass="DetailViewController" customModule="TimeTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fnc-m0-7wz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVW-Kp-87X">
+                                <rect key="frame" x="100" y="414" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5wV-b4-8ga"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5wV-b4-8ga" firstAttribute="bottom" secondItem="SVW-Kp-87X" secondAttribute="bottom" constant="427" id="7xt-4j-rm8"/>
+                            <constraint firstItem="SVW-Kp-87X" firstAttribute="top" secondItem="5wV-b4-8ga" secondAttribute="top" constant="370" id="Euw-wW-Pmu"/>
+                            <constraint firstItem="5wV-b4-8ga" firstAttribute="trailing" secondItem="SVW-Kp-87X" secondAttribute="trailing" constant="186" id="JXz-K7-M3i"/>
+                            <constraint firstItem="SVW-Kp-87X" firstAttribute="leading" secondItem="5wV-b4-8ga" secondAttribute="leading" constant="100" id="g11-eH-kls"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adx-nl-WSd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533" y="-720"/>
+        </scene>
         <!--Add View Controller-->
         <scene sceneID="nAW-sM-JwQ">
             <objects>

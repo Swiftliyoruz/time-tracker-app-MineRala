@@ -18,26 +18,16 @@ final class TaskTableViewCell: UITableViewCell {
     @IBOutlet private weak var tagTwoLabel: UILabel!
     @IBOutlet private weak var playButtton: UIButton!
     
+    private lazy var viewModel: TaskTableViewModelCellInterface = TaskTableViewModelCell()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpUI()
+        viewModel.view = self
+        viewModel.awakeFromNib()
     }
-    
-    private func setUpUI() {
-        cardView.layer.cornerRadius = CornerRadius.small.rawValue
-        tagView.layer.cornerRadius = CornerRadius.small.rawValue
-        tagTwoView.layer.cornerRadius = CornerRadius.small.rawValue
-        tagTwoLabel.adjustsFontSizeToFitWidth = true
-        tagTwoLabel.minimumScaleFactor = 0.5
         
-    }
-    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        cardView.backgroundColor = Color.cellBackgroundColor
-        tagView.backgroundColor = Color.cellTagViewColor
-        tagTwoView.backgroundColor = Color.cellTagViewTwoColor
-        tagLabel.textColor = Color.cellTagViewLabelTextColor
-        tagTwoLabel.textColor = Color.cellTagViewTwoLabelTextColor
+        viewModel.view?.traitCollectionDidChange()
     }
     
     override func layoutSubviews() {
@@ -53,4 +43,25 @@ final class TaskTableViewCell: UITableViewCell {
         timeLabel.text = String(task.time)
     }
     
+}
+
+extension TaskTableViewCell: TaskTableViewCellInterface {
+    func setUpUI() {
+        cardView.layer.cornerRadius = CornerRadius.small.rawValue
+        tagView.layer.cornerRadius = CornerRadius.small.rawValue
+        tagTwoView.layer.cornerRadius = CornerRadius.small.rawValue
+        tagTwoLabel.adjustsFontSizeToFitWidth = true
+        tagTwoLabel.minimumScaleFactor = 0.5
+        
+    }
+    
+    func traitCollectionDidChange() {
+        func traitCollextion() {
+            cardView.backgroundColor = Color.cellBackgroundColor
+            tagView.backgroundColor = Color.cellTagViewColor
+            tagTwoView.backgroundColor = Color.cellTagViewTwoColor
+            tagLabel.textColor = Color.cellTagViewLabelTextColor
+            tagTwoLabel.textColor = Color.cellTagViewTwoLabelTextColor
+        }
+    }
 }

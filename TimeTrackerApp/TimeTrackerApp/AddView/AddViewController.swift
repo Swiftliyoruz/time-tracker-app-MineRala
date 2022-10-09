@@ -7,11 +7,20 @@
 
 import UIKit
 
+protocol AddViewInterface: AnyObject {
+    func setUpNavigationController()
+    func setUpMainCategory()
+    func setUpTaskIcon()
+    func setUpButtonBorder()
+    func setUpTextField()
+}
+
 private enum AddViewConstant {
     static let navigationBarTitle = "Add Task"
     static let tabBarTitle = ""
     static let borderWidth = 0.8
     static let borderColor = DefaultColor.borderColor
+    static let titleTextAttributesColor = DefaultColor.black
 }
 
 private enum MainCategory {
@@ -46,7 +55,7 @@ private enum TaskIcon {
             return "Sport"
         }
     }
-
+    
     var image: UIImage? {
         switch self {
         case .monitor:
@@ -72,21 +81,36 @@ final class AddViewController: UIViewController, UINavigationBarDelegate {
     @IBOutlet private weak var taskIconButton: UIButton!
     @IBOutlet private weak var addButton: UIButton!
     
-     private var viewModel: AddViewModelInterface! {
-         didSet {
-             viewModel.view = self
-         }
-     }
-
+    private var viewModel: AddViewModelInterface! {
+        didSet {
+            viewModel.view = self
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = AddViewModel()
         viewModel.viewDidLoad()
     }
-
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        viewModel.view?.traitCollectionDidChange()
+        view.backgroundColor = Color.viewControllerBackgroundColor
+        taskTitleLabel.textColor = Color.cellTitleTextColor
+        taskTitleTextField.textColor = Color.cellTitleTextColor
+        taskTitleTextField.backgroundColor = Color.cellBackgroundColor
+        mainCategoryLabel.textColor = Color.cellTitleTextColor
+        mainCategoryButton.backgroundColor = Color.cellBackgroundColor
+        subCategoryLabel.textColor = Color.cellTitleTextColor
+        subCategoryTextField.textColor = Color.cellTitleTextColor
+        subCategoryTextField.backgroundColor = Color.cellBackgroundColor
+        taskIconLabel.textColor = Color.cellTitleTextColor
+        taskIconButton.backgroundColor = Color.cellBackgroundColor
+        addButton.titleLabel?.textColor = Color.cellTitleTextColor
+        addButton.backgroundColor = Color.cellBackgroundColor
+        addButton.layer.borderColor = Color.borderColor.cgColor
+        mainCategoryButton.layer.borderColor = Color.borderColor.cgColor
+        taskIconButton.layer.borderColor = Color.borderColor.cgColor
     }
 }
 
@@ -112,7 +136,7 @@ extension AddViewController {
         newTask.time = 15.66
         
         viewModel.addItem(newTask: newTask)
-    
+        
         taskTitleTextField.text?.removeAll()
         //mainCategoryButton.currentTitle?.removeAll()
         subCategoryTextField.text?.removeAll()
@@ -127,33 +151,13 @@ extension AddViewController {
 
 // MARK: - AddViewInterface
 extension AddViewController: AddViewInterface {
-    func traitCollectionDidChange() {
-        view.backgroundColor = Color.viewControllerBackgroundColor
-        taskTitleLabel.textColor = Color.cellTitleTextColor
-        taskTitleTextField.textColor = Color.cellTitleTextColor
-        taskTitleTextField.backgroundColor = Color.cellBackgroundColor
-        mainCategoryLabel.textColor = Color.cellTitleTextColor
-        mainCategoryButton.backgroundColor = Color.cellBackgroundColor
-        subCategoryLabel.textColor = Color.cellTitleTextColor
-        subCategoryTextField.textColor = Color.cellTitleTextColor
-        subCategoryTextField.backgroundColor = Color.cellBackgroundColor
-        taskIconLabel.textColor = Color.cellTitleTextColor
-        taskIconButton.backgroundColor = Color.cellBackgroundColor
-        addButton.titleLabel?.textColor = Color.cellTitleTextColor
-        addButton.backgroundColor = Color.cellBackgroundColor
-        addButton.layer.borderColor = Color.borderColor.cgColor
-        mainCategoryButton.layer.borderColor = Color.borderColor.cgColor
-        taskIconButton.layer.borderColor = Color.borderColor.cgColor
-    }
-    
-     func setUpNavigationController() {
+    func setUpNavigationController() {
         title = AddViewConstant.navigationBarTitle
         tabBarController?.tabBar.items?[safe: 1]?.title = AddViewConstant.tabBarTitle
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(hexString: viewModel.textAttributesColor)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: AddViewConstant.titleTextAttributesColor ]
     }
     
-     func setUpMainCategory() {
+    func setUpMainCategory() {
         let mainCategoryClosure = {(action : UIAction ) in
             print(action.title)
         }
@@ -167,7 +171,7 @@ extension AddViewController: AddViewInterface {
         mainCategoryButton.changesSelectionAsPrimaryAction = true
     }
     
-     func setUpTaskIcon() {
+    func setUpTaskIcon() {
         let taskCategoryClosure = { [self] (action: UIAction) in
             print(action.title)
             taskIconButton.setImage(action.image, for: .normal)
@@ -184,7 +188,7 @@ extension AddViewController: AddViewInterface {
         taskIconButton.changesSelectionAsPrimaryAction = true
     }
     
-     func setUpButtonBorder() {
+    func setUpButtonBorder() {
         [addButton, mainCategoryButton, taskIconButton].forEach { button in
             guard let button = button else { return }
             button.layer.cornerRadius = CornerRadius.medium.rawValue
@@ -193,12 +197,10 @@ extension AddViewController: AddViewInterface {
         }
     }
     
-     func setUpTextField() {
+    func setUpTextField() {
         taskTitleTextField.returnKeyType = .done
         taskTitleTextField.delegate = self
         subCategoryTextField.returnKeyType = .done
         subCategoryTextField.delegate = self
-    
     }
-    
 }

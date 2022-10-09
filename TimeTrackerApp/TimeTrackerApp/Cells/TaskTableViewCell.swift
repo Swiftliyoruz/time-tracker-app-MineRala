@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TaskTableViewCellInterface: AnyObject {
+    func setUpUI()
+}
+
 final class TaskTableViewCell: UITableViewCell {
     @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var iconImageView: UIImageView!
@@ -27,7 +31,11 @@ final class TaskTableViewCell: UITableViewCell {
     }
         
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        viewModel.view?.traitCollectionDidChange()
+        cardView.backgroundColor = Color.cellBackgroundColor
+        tagView.backgroundColor = Color.cellTagViewColor
+        tagTwoView.backgroundColor = Color.cellTagViewTwoColor
+        tagLabel.textColor = Color.cellTagViewLabelTextColor
+        tagTwoLabel.textColor = Color.cellTagViewTwoLabelTextColor
     }
     
     override func layoutSubviews() {
@@ -52,16 +60,5 @@ extension TaskTableViewCell: TaskTableViewCellInterface {
         tagTwoView.layer.cornerRadius = CornerRadius.small.rawValue
         tagTwoLabel.adjustsFontSizeToFitWidth = true
         tagTwoLabel.minimumScaleFactor = 0.5
-        
-    }
-    
-    func traitCollectionDidChange() {
-        func traitCollextion() {
-            cardView.backgroundColor = Color.cellBackgroundColor
-            tagView.backgroundColor = Color.cellTagViewColor
-            tagTwoView.backgroundColor = Color.cellTagViewTwoColor
-            tagLabel.textColor = Color.cellTagViewLabelTextColor
-            tagTwoLabel.textColor = Color.cellTagViewTwoLabelTextColor
-        }
     }
 }

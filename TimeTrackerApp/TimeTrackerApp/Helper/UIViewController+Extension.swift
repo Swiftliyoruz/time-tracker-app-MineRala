@@ -49,3 +49,5 @@ extension UIViewController {
          controller.present(dialogMessage, animated: true, completion: {})
     }
 }
+// protocol AlertPresentable {
+// showAlert()

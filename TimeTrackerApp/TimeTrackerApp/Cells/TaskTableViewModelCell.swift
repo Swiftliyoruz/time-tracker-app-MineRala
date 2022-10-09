@@ -7,11 +7,6 @@
 
 import Foundation
 
-protocol TaskTableViewCellInterface: AnyObject {
-    func setUpUI()
-    func traitCollectionDidChange()
-}
-
 protocol TaskTableViewModelCellInterface {
     var view: TaskTableViewCellInterface? { get set }
     func awakeFromNib()

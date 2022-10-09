@@ -12,6 +12,15 @@ private enum HomeViewConstant {
     static let cellReuseIdentifier = "TaskTableViewCell"
     static let navigationBarTitle = "Task"
     static let tabBarTitle = ""
+    static let titleTextAttributes = DefaultColor.black
+}
+
+protocol HomeViewModelDelegate: AnyObject {
+    func setUpNavigationController()
+    func setUpUI()
+    func reloadData()
+    func handleDelete(indexPath: IndexPath)
+    func deleteRows(indexPath: IndexPath)
 }
 
 final class HomeViewController: UIViewController {
@@ -24,8 +33,8 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var taskTableView: UITableView!
     
     private lazy var viewModel: HomeViewModelInterface = HomeViewModel()
-        //{ didSet { viewModel.delegate = self } }
-
+    //{ didSet { viewModel.delegate = self } }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
@@ -36,10 +45,18 @@ final class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         viewModel.viewDidAppear()
     }
-
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        viewModel.delegate?.traitCollectionDidChange()
+        view.backgroundColor = Color.viewControllerBackgroundColor
+        taskView.backgroundColor = Color.cellBackgroundColor
+        titleLabel.textColor = Color.cellTitleTextColor
+        timeLabel.textColor = Color.cellTitleTextColor
+        rightArrowButton.setImage(Icon.rightArrowIcon, for: .normal)
+        todayLabel.textColor = Color.cellTitleTextColor
+        seeAllButton.titleLabel?.textColor = Color.cellTitleTextColor
+        tabBarController?.tabBar.items?.first?.image = Icon.timeOutlineIcon
+        tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
     }
 }
 
@@ -80,31 +97,17 @@ extension HomeViewController: UITableViewDelegate{
 
 //MARK: - HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
-func setUpNavigationController() {
+    func setUpNavigationController() {
         title = HomeViewConstant.navigationBarTitle
         tabBarController?.tabBar.items?.first?.title = HomeViewConstant.tabBarTitle
         navigationController?.navigationBar.prefersLargeTitles = true
-    let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(hexString: viewModel.textAttributesColor)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: HomeViewConstant.titleTextAttributes]
     }
     
-     func setUpUI() {
+    func setUpUI() {
         taskView.layer.cornerRadius = CornerRadius.medium.rawValue
         taskTableView.register(UINib(nibName: HomeViewConstant.cellNibName, bundle: nil), forCellReuseIdentifier: HomeViewConstant.cellReuseIdentifier)
         taskTableView.separatorStyle = .none
-    }
-    
-    func traitCollectionDidChange() {
-        view.backgroundColor = Color.viewControllerBackgroundColor
-        taskView.backgroundColor = Color.cellBackgroundColor
-       // textAttributesColor = Color.navigationTitleColor
-        titleLabel.textColor = Color.cellTitleTextColor
-        timeLabel.textColor = Color.cellTitleTextColor
-        rightArrowButton.setImage(Icon.rightArrowIcon, for: .normal)
-        todayLabel.textColor = Color.cellTitleTextColor
-        seeAllButton.titleLabel?.textColor = Color.cellTitleTextColor
-        tabBarController?.tabBar.items?.first?.image = Icon.timeOutlineIcon
-        tabBarController?.tabBar.items?.first?.selectedImage = Icon.timeOutlineIconSelected
     }
     
     func reloadData() {
@@ -112,9 +115,9 @@ func setUpNavigationController() {
     }
     
     func handleDelete(indexPath: IndexPath) {
-       showAlertDelete(controller: self, NSLocalizedString("Are you sure you want to delete this task from  list?", comment: "")) { [self] in
-           viewModel.deleteItem(indexPath: indexPath)
-       }
+        showAlertDelete(controller: self, NSLocalizedString("Are you sure you want to delete this task from  list?", comment: "")) { [self] in
+            viewModel.deleteItem(indexPath: indexPath)
+        }
     }
     
     func deleteRows(indexPath: IndexPath) {

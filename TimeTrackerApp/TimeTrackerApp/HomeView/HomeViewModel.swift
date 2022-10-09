@@ -7,15 +7,6 @@
 
 import Foundation
 
-protocol HomeViewModelDelegate: AnyObject {
-    func setUpNavigationController()
-    func setUpUI()
-    func traitCollectionDidChange()
-    func reloadData()
-    func handleDelete(indexPath: IndexPath)
-    func deleteRows(indexPath: IndexPath)
-}
-
 protocol HomeViewModelInterface {
     var delegate: HomeViewModelDelegate? { get set }
     var numberOfRowsInSection: Int { get }

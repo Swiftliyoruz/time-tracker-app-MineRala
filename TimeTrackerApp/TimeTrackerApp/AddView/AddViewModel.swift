@@ -7,20 +7,10 @@
 
 import Foundation
 
-protocol AddViewInterface: AnyObject {
-    func setUpNavigationController()
-    func setUpMainCategory()
-    func setUpTaskIcon()
-    func setUpButtonBorder()
-    func setUpTextField()
-    func traitCollectionDidChange()
-}
-
 protocol AddViewModelInterface {
     var view: AddViewInterface? { get set }
-    var textAttributesColor: String { get }
+
     func viewDidLoad()
-    func setUpUI()
     func addItem(newTask: Task)
 }
 
@@ -31,17 +21,10 @@ final class AddViewModel {
 
 extension AddViewModel: AddViewModelInterface {
     var textAttributesColor: String {
-        get {
-            return "000000"
-        }
+        "000000"
     }
     
-
     func viewDidLoad() {
-        setUpUI()
-    }
-    
-    func setUpUI() {
         view?.setUpNavigationController()
         view?.setUpMainCategory()
         view?.setUpTaskIcon()
@@ -52,5 +35,4 @@ extension AddViewModel: AddViewModelInterface {
     func addItem(newTask: Task) {
         DataAccessLayer.addTask(task: newTask)
     }
-
 }

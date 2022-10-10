@@ -12,11 +12,10 @@ protocol HomeViewModelInterface {
     var numberOfRowsInSection: Int { get }
     var heightForRowAt: Double { get }
     var taskList: [Task] { get set }
-    var textAttributesColor: String { get set }
+    
     func viewDidLoad()
     func viewDidAppear()
     func handleDeletion(indexPath: IndexPath)
-    func deleteItem(indexPath: IndexPath)
 }
 
 private extension HomeViewModel {
@@ -32,12 +31,14 @@ final class HomeViewModel {
 
 //MARK: - HomeViewModelInterface
 extension HomeViewModel: HomeViewModelInterface {
-    
+
     var taskList: [Task] {
         get {
             DataAccessLayer.fetchTasks() ?? []
         }
-        set {}
+        set {
+            
+        }
     }
     
     var numberOfRowsInSection: Int {
@@ -47,35 +48,23 @@ extension HomeViewModel: HomeViewModelInterface {
     var heightForRowAt: Double {
         Constant.cellHeight
     }
-    
-    var textAttributesColor: String {
-        get {
-            return "000000"
-        }
-        set { }
-    }
-    
+
     func viewDidLoad() {
-        print("View Did Load")
         delegate?.setUpNavigationController()
         delegate?.setUpUI()
     }
     
     func viewDidAppear() {
-        print("View Did Appear")
         delegate?.reloadData()
     }
     
     func handleDeletion(indexPath: IndexPath) {
-        delegate?.handleDelete(indexPath: indexPath)
+        delegate?.showAlert(message: "Are you sure you want to delete this task from  list?", indexPath: indexPath, deletion: {
+            DataAccessLayer.deleteTask(task: self.taskList[indexPath.row])
+            guard let taskList = DataAccessLayer.fetchTasks() else { return }
+            self.taskList = taskList
+            self.delegate?.deleteRows(indexPath: indexPath)
+            self.delegate?.reloadData()
+        })
     }
-    
-    func deleteItem(indexPath: IndexPath) {
-        DataAccessLayer.deleteTask(task: taskList[indexPath.row])
-        guard let taskList = DataAccessLayer.fetchTasks() else { return }
-        self.taskList = taskList
-        delegate?.deleteRows(indexPath: indexPath)
-        delegate?.reloadData()
-    }
-    
 }

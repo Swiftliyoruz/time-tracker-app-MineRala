@@ -15,7 +15,7 @@ private enum HomeViewConstant {
     static let titleTextAttributes = DefaultColor.black
 }
 
-protocol HomeViewModelDelegate: AnyObject {
+protocol HomeViewModelDelegate: AnyObject, AlertPresentable {
     func setUpNavigationController()
     func setUpUI()
     func reloadData()
@@ -33,8 +33,8 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var taskTableView: UITableView!
     
     private lazy var viewModel: HomeViewModelInterface = HomeViewModel()
-    //{ didSet { viewModel.delegate = self } }
-    
+        //{ didSet { viewModel.delegate = self } }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
@@ -45,7 +45,7 @@ final class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         viewModel.viewDidAppear()
     }
-    
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         view.backgroundColor = Color.viewControllerBackgroundColor
@@ -97,14 +97,14 @@ extension HomeViewController: UITableViewDelegate{
 
 //MARK: - HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
-    func setUpNavigationController() {
+func setUpNavigationController() {
         title = HomeViewConstant.navigationBarTitle
         tabBarController?.tabBar.items?.first?.title = HomeViewConstant.tabBarTitle
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: HomeViewConstant.titleTextAttributes]
     }
     
-    func setUpUI() {
+     func setUpUI() {
         taskView.layer.cornerRadius = CornerRadius.medium.rawValue
         taskTableView.register(UINib(nibName: HomeViewConstant.cellNibName, bundle: nil), forCellReuseIdentifier: HomeViewConstant.cellReuseIdentifier)
         taskTableView.separatorStyle = .none
@@ -115,9 +115,7 @@ extension HomeViewController: HomeViewModelDelegate {
     }
     
     func handleDelete(indexPath: IndexPath) {
-        showAlertDelete(controller: self, NSLocalizedString("Are you sure you want to delete this task from  list?", comment: "")) { [self] in
-            viewModel.deleteItem(indexPath: indexPath)
-        }
+        viewModel.handleDeletion(indexPath: indexPath)
     }
     
     func deleteRows(indexPath: IndexPath) {

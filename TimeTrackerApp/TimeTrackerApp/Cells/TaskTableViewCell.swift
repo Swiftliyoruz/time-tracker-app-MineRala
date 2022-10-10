@@ -50,7 +50,6 @@ final class TaskTableViewCell: UITableViewCell {
         tagTwoLabel.text = task.subCategory
         timeLabel.text = String(task.time)
     }
-    
 }
 
 extension TaskTableViewCell: TaskTableViewCellInterface {

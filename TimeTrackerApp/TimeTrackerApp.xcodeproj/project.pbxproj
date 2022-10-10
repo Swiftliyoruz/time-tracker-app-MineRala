@@ -43,6 +43,7 @@
 		E8D57D0828F221250040693C /* TaskTableViewModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D57D0728F221250040693C /* TaskTableViewModelCell.swift */; };
 		E8D57D0A28F225D10040693C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D57D0928F225D10040693C /* DetailViewModel.swift */; };
 		E8D57D0C28F225E40040693C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D57D0B28F225E40040693C /* DetailViewController.swift */; };
+		E8D57D1128F32BB10040693C /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D57D1028F32BB10040693C /* AlertPresentable.swift */; };
 		E8F4CC1228DCD026007A6A39 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F4CC1128DCD026007A6A39 /* Number.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		E8D57D0728F221250040693C /* TaskTableViewModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewModelCell.swift; sourceTree = "<group>"; };
 		E8D57D0928F225D10040693C /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E8D57D0B28F225E40040693C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E8D57D1028F32BB10040693C /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		E8F4CC1128DCD026007A6A39 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				E88F83B628E7613B00B56CE1 /* UIWindow+Extension.swift */,
 				E88F83B828E7639A00B56CE1 /* UIFont+Extension.swift */,
 				E88177AE28E8B94300591724 /* Array+Extension.swift */,
+				E8D57D1028F32BB10040693C /* AlertPresentable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				E8BC99B328CE4875007C4416 /* SceneDelegate.swift in Sources */,
 				E8B53E8928D74D6F00C207B9 /* Icon.swift in Sources */,
 				E86C709628F1A9A60020FF37 /* AddViewModel.swift in Sources */,
+				E8D57D1128F32BB10040693C /* AlertPresentable.swift in Sources */,
 				E85BA88328CF566B00ED5E1E /* ReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ import Foundation
 
 protocol TaskTableViewModelCellInterface {
     var view: TaskTableViewCellInterface? { get set }
+    
     func awakeFromNib()
 }
 

@@ -20,10 +20,6 @@ final class AddViewModel {
 }
 
 extension AddViewModel: AddViewModelInterface {
-    var textAttributesColor: String {
-        "000000"
-    }
-    
     func viewDidLoad() {
         view?.setUpNavigationController()
         view?.setUpMainCategory()
